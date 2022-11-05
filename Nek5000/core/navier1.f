@@ -953,8 +953,7 @@ c           CALL COL2        (RPCG,H2M2,NTOT2)
          CALL COPY        (RPCG,RCG,NTOT2)
       ENDIF
 
-!      call ortho (rpcg)
-      call ortho_right(rpcg)
+      call ortho (rpcg)
 
       return
       end
@@ -2499,9 +2498,6 @@ c-----------------------------------------------------------------------
       real length
  
 c     (1) Face n-t transformation
-
-      call rotate_cyc_all(r1,r2,r2,idir)
-      return
 
       nface = 2*ldim
       do e=1,nelfld(ifield)
